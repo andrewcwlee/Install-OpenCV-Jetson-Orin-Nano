@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "Installing OpenCV 4.7.0 on your Jetson Nano"
-echo "It will take 3.5 hours !"
+echo "Forked from Qengineering/Install-OpenCV-Jetson-Nano"
+echo "Installing OpenCV 4.7.0 on your Jetson Orin Nano"
+echo "It might take 3.5 hours !"
 
 # reveal the CUDA location
 cd ~
@@ -14,7 +15,6 @@ sudo apt-get install -y build-essential cmake git unzip pkg-config zlib1g-dev
 sudo apt-get install -y libjpeg-dev libjpeg8-dev libjpeg-turbo8-dev libpng-dev libtiff-dev
 sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libglew-dev
 sudo apt-get install -y libgtk2.0-dev libgtk-3-dev libcanberra-gtk*
-sudo apt-get install -y python-dev python-numpy python-pip
 sudo apt-get install -y python3-dev python3-numpy python3-pip
 sudo apt-get install -y libxvidcore-dev libx264-dev libgtk-3-dev
 sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev libxine2-dev
@@ -56,7 +56,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D EIGEN_INCLUDE_PATH=/usr/include/eigen3 \
 -D WITH_OPENCL=OFF \
 -D WITH_CUDA=ON \
--D CUDA_ARCH_BIN=5.3 \
+-D CUDA_ARCH_BIN=8.7 \
 -D CUDA_ARCH_PTX="" \
 -D WITH_CUDNN=ON \
 -D WITH_CUBLAS=ON \
@@ -85,7 +85,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 # run make
 FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
 # Use "-j 4" only swap space is larger than 5.5GB
-if [[ "FREE_MEM" -gt "5500" ]]; then
+if [[ $FREE_MEM -gt 5500 ]]; then
   NO_JOB=4
 else
   echo "Due to limited swap, make only uses 1 core"
@@ -102,4 +102,4 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.7.0 on your Jetson Nano"
+echo "You've successfully installed OpenCV 4.7.0 with CUDA on your Jetson Orin Nano"
