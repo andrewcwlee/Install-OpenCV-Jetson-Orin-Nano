@@ -1,7 +1,8 @@
-# Install-OpenCV-Jetson-Nano
+# Install-OpenCV-Jetson-Orin-Nano
+Forked from [Qengineering/Install-OpenCV-Jetson-Nano](https://github.com/Qengineering/Install-OpenCV-Jetson-Nano)
 ![output image]( https://qengineering.eu/images/LogoOpenJetsonGitHub.webp )
 
-## OpenCV installation script for a Jetson Nano
+## OpenCV installation script for a Jetson Orin Nano
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)<br/>
 
@@ -17,18 +18,11 @@ You must have more memory allocated to your Nano for the fast 4 core build.<br/>
 ```
 # check your total memory (RAM + swap) first for a fast build. You need at least a total of:
 # OpenCV 4.7.0 -> 8.5 GB!
-# OpenCV 4.6.0 -> 8.5 GB!
-# OpenCV 4.5.5 -> 8.5 GB!
-# OpenCV 4.5.4 -> 8.5 GB!
-# OpenCV 4.5.3 -> 8.5 GB!
-# OpenCV 4.5.2 -> 8.5 GB!
-# OpenCV 4.5.1 -> 6.5 GB
-# OpenCV 4.5.0 -> 6.5 GB
 # if not, enlarge your swap space as explained in the guide, 
 # or only 1 core is used for the compilation.
 $ free -m
 
-$ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-7-0.sh
+$ wget https://github.com/andrewcwlee/Install-OpenCV-Jetson-Orin-Nano/raw/main/OpenCV-4-7-0.sh
 $ sudo chmod 755 ./OpenCV-4-7-0.sh
 $ ./OpenCV-4-7-0.sh
 ```
@@ -54,6 +48,6 @@ OpenCV will be installed to the `/usr` directory, all files will be copied to fo
 
 ------------
 
+## Courtesy of Qengineering
+`Please note that I am not affiliated with Qengineering in any way.`
 [![paypal](https://qengineering.eu/images/TipJarSmall4.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPZTM5BB3FCYL) 
-
-
