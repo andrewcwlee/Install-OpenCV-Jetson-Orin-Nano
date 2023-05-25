@@ -50,4 +50,5 @@ OpenCV will be installed to the `/usr` directory, all files will be copied to fo
 
 ## Courtesy of Qengineering
 `Please note that I am not affiliated with Qengineering in any way.`
+
 [![paypal](https://qengineering.eu/images/TipJarSmall4.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPZTM5BB3FCYL) 
